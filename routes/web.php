@@ -30,3 +30,10 @@ Route::get('/test1', function () {
 Route::get('/user/{id?}', function (?string $id=null) {
     return 'User '.$id;
 });
+
+use App\Http\Controllers\TestController;
+
+Route::get('/test', [TestController::class, 'func_1']);
+
+Route::get('/greeting', [App\Http\Controllers\GreetingController::class, 'showForm']);
+Route::post('/greeting', [App\Http\Controllers\GreetingController::class, 'generateGreeting']);
