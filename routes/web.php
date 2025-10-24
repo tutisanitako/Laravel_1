@@ -37,3 +37,11 @@ Route::get('/test', [TestController::class, 'func_1']);
 
 Route::get('/greeting', [App\Http\Controllers\GreetingController::class, 'showForm']);
 Route::post('/greeting', [App\Http\Controllers\GreetingController::class, 'generateGreeting']);
+
+use App\Http\Controllers\StudentController;
+
+Route::get('/', function () {
+    return view('student');
+});
+
+Route::post('/add-student', [StudentController::class, 'store']);
